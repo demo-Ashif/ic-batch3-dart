@@ -1,14 +1,17 @@
 // Example of switch-case statements in Dart
 // This file demonstrates the usage of switch-case statements
 
+import 'dart:io';
+
 // Define enum outside of main function
 enum Direction { north, south, east, west }
 
 void main() {
   // Example 1: Basic switch-case with numbers
-  int day = 3;
+  print('\nExample 1: Basic switch-case with numbers');
+  print('Enter a number between 1 and 7 to get the day of the week:');
+  int? day = int.tryParse(stdin.readLineSync() ?? '0');
 
-  print('Example 1: Basic switch-case with numbers');
   switch (day) {
     case 1:
       print('Monday');
@@ -34,9 +37,10 @@ void main() {
   }
 
   // Example 2: Switch-case with strings
-  String grade = 'B';
-
   print('\nExample 2: Switch-case with strings');
+  print('Enter a grade (A, B, C, D, or F):');
+  String? grade = stdin.readLineSync()?.toUpperCase();
+
   switch (grade) {
     case 'A':
       print('Excellent!');
@@ -58,9 +62,29 @@ void main() {
   }
 
   // Example 3: Switch-case with enum
-  Direction direction = Direction.north;
-
   print('\nExample 3: Switch-case with enum');
+  print('Enter a direction (north, south, east, or west):');
+  String? directionInput = stdin.readLineSync()?.toLowerCase();
+  Direction? direction;
+
+  switch (directionInput) {
+    case 'north':
+      direction = Direction.north;
+      break;
+    case 'south':
+      direction = Direction.south;
+      break;
+    case 'east':
+      direction = Direction.east;
+      break;
+    case 'west':
+      direction = Direction.west;
+      break;
+    default:
+      print('Invalid direction');
+      return;
+  }
+
   switch (direction) {
     case Direction.north:
       print('Going north');
@@ -77,9 +101,10 @@ void main() {
   }
 
   // Example 4: Switch-case with multiple cases
-  int month = 2;
-
   print('\nExample 4: Switch-case with multiple cases');
+  print('Enter a month number (1-12):');
+  int? month = int.tryParse(stdin.readLineSync() ?? '0');
+
   switch (month) {
     case 1:
     case 3:
@@ -104,16 +129,21 @@ void main() {
   }
 
   // Example 5: Switch-case with expressions
-  int number = 15;
-
   print('\nExample 5: Switch-case with expressions');
-  switch (number % 2) {
-    case 0:
-      print('Even number');
-      break;
-    case 1:
-      print('Odd number');
-      break;
+  print('Enter a number to check if it\'s even or odd:');
+  int? number = int.tryParse(stdin.readLineSync() ?? '0');
+
+  if (number != null) {
+    switch (number % 2) {
+      case 0:
+        print('Even number');
+        break;
+      case 1:
+        print('Odd number');
+        break;
+    }
+  } else {
+    print('Invalid input');
   }
 
   // Example 6: Switch-case with continue
