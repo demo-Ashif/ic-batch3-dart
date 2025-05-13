@@ -6,7 +6,7 @@ void main() {
   void createMap() {
     // Different ways to create a Map
     Map<String, int> scores1 = {'John': 90, 'Alice': 85, 'Bob': 95};
-    Map<String, dynamic> scores2 = Map();
+    Map<String, dynamic> scores2 = {};
     scores2['John'] = 90;
     scores2['Alice'] = 85;
 
