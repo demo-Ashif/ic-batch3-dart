@@ -1,4 +1,25 @@
 /// This file demonstrates various Map operations in Dart
+///
+/// Set vs Map:
+/// - Map: A collection of key-value pairs
+///   * Stores data as key-value pairs
+///   * Keys must be unique, values can be duplicated
+///   * Perfect for looking up values by their keys
+///   * Great for storing related data together
+///
+/// Best Use Cases for Map:
+/// 1. Storing user profiles (username -> user data)
+/// 2. Caching data (key -> cached value)
+/// 3. Counting occurrences (item -> count)
+/// 4. Storing configuration settings
+/// 5. When you need to associate data with unique identifiers
+///
+/// Example scenarios:
+/// - User authentication (username -> password)
+/// - Product catalog (product ID -> product details)
+/// - Language translations (key -> translated text)
+/// - API response caching (URL -> response data)
+/// - Configuration management (setting name -> value)
 /// A Map is a collection of key-value pairs where each key is unique
 
 void main() {

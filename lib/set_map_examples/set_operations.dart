@@ -1,5 +1,24 @@
 /// This file demonstrates various Set operations in Dart
-/// A Set is an unordered collection of unique items
+///
+/// Set vs Map:
+/// - Set: An unordered collection of unique items
+///   * Only stores values (no keys)
+///   * Each value must be unique
+///   * Perfect for checking existence of items
+///   * Great for removing duplicates from collections
+///
+/// Best Use Cases for Set:
+/// 1. Removing duplicates from a list
+/// 2. Checking if an item exists in a collection
+/// 3. Mathematical set operations (union, intersection, difference)
+/// 4. When you need to ensure uniqueness of items
+/// 5. When order doesn't matter
+///
+/// Example scenarios:
+/// - Tracking unique visitors to a website
+/// - Managing a list of unique tags/categories
+/// - Finding common elements between two collections
+/// - Maintaining a collection of unique IDs
 
 void main() {
   // 1. Remove an item from a Set
