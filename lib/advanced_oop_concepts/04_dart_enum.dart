@@ -291,27 +291,39 @@ class Order {
 void main() {
   print("=== DART ENUM EXAMPLES ===\n");
 
+  // Simple Male/Female Example without Enums
+  String gender1 = "male";
+  String gender2 = "female";
+  print("Gender 1: $gender1");
+  print("Gender 2: $gender2");
+
+  // Simple Male/Female Example with Enums
+  Gender genderEnum1 = Gender.male;
+  Gender genderEnum2 = Gender.female;
+  print("Gender Enum 1: \\${genderEnum1.name}");
+  print("Gender Enum 2: \\${genderEnum2.name}");
+
   // Example 1: Basic Enum Usage
   print("1. Basic Enum Usage:");
   Color favoriteColor = Color.blue;
-  print("Favorite color: ${favoriteColor.name}");
-  print("Color index: ${favoriteColor.index}");
-  print("All colors: ${Color.values.map((c) => c.name).join(', ')}");
-  print("Hex value: ${ColorManager.getHexValue(favoriteColor)}");
-  print("Is warm color? ${ColorManager.isWarmColor(favoriteColor)}");
+  print("Favorite color: \\${favoriteColor.name}");
+  print("Color index: \\${favoriteColor.index}");
+  print("All colors: \\${Color.values.map((c) => c.name).join(', ')}");
+  print("Hex value: \\${ColorManager.getHexValue(favoriteColor)}");
+  print("Is warm color? \\${ColorManager.isWarmColor(favoriteColor)}");
   print("");
 
   // Example 2: Enhanced Enum with Properties
   print("2. Enhanced Enum - Planets:");
   Planet earth = Planet.earth;
-  print("Planet: ${earth.name}");
-  print("Mass: ${earth.mass} kg");
-  print("Radius: ${earth.radius} m");
-  print("Surface gravity: ${earth.surfaceGravity.toStringAsFixed(2)} m/s²");
+  print("Planet: \\${earth.name}");
+  print("Mass: \\${earth.mass} kg");
+  print("Radius: \\${earth.radius} m");
+  print("Surface gravity: \\${earth.surfaceGravity.toStringAsFixed(2)} m/s²");
   print(
-    "Weight of 70kg person: ${earth.surfaceWeight(70).toStringAsFixed(1)} N",
+    "Weight of 70kg person: \\${earth.surfaceWeight(70).toStringAsFixed(1)} N",
   );
-  print("Largest planet: ${Planet.getLargestPlanet().name}");
+  print("Largest planet: \\${Planet.getLargestPlanet().name}");
   print("");
 
   // Example 3: Application State Management
@@ -331,10 +343,10 @@ void main() {
   for (int code in statusCodes) {
     HttpStatus? status = HttpStatus.fromCode(code);
     if (status != null) {
-      print("Status $code: ${status.description}");
-      print("  Is success: ${status.isSuccess}");
-      print("  Is client error: ${status.isClientError}");
-      print("  Is server error: ${status.isServerError}");
+      print("Status $code: \\${status.description}");
+      print("  Is success: \\${status.isSuccess}");
+      print("  Is client error: \\${status.isClientError}");
+      print("  Is server error: \\${status.isServerError}");
     }
   }
   print("");
@@ -342,29 +354,29 @@ void main() {
   // Example 5: User Role Permissions
   print("5. User Role Permissions:");
   UserRole currentUser = UserRole.moderator;
-  print("Current role: ${currentUser.name} (level ${currentUser.level})");
-  print("Permissions: ${currentUser.permissions.join(', ')}");
+  print("Current role: \\${currentUser.name} (level \\${currentUser.level})");
+  print("Permissions: \\${currentUser.permissions.join(', ')}");
 
   List<String> actionsToCheck = ['read', 'comment', 'delete', 'manage'];
   for (String action in actionsToCheck) {
-    print("Can $action: ${currentUser.hasPermission(action)}");
+    print("Can $action: \\${currentUser.hasPermission(action)}");
   }
 
-  print("Is higher than user: ${currentUser.isHigherThan(UserRole.user)}");
+  print("Is higher than user: \\${currentUser.isHigherThan(UserRole.user)}");
   print(
-    "Roles with level >= 2: ${UserRole.getRolesWithMinLevel(2).map((r) => r.name).join(', ')}",
+    "Roles with level >= 2: \\${UserRole.getRolesWithMinLevel(2).map((r) => r.name).join(', ')}",
   );
   print("");
 
   // Example 6: Days of Week
   print("6. Days of Week:");
   DayOfWeek today = DayOfWeek.wednesday;
-  print("Today: ${today.name} (${today.shortName})");
-  print("Is weekday: ${today.isWeekday}");
-  print("Next day: ${today.nextDay.name}");
-  print("Previous day: ${today.previousDay.name}");
-  print("Weekdays: ${DayOfWeek.weekdays.map((d) => d.shortName).join(', ')}");
-  print("Weekends: ${DayOfWeek.weekends.map((d) => d.shortName).join(', ')}");
+  print("Today: \\${today.name} (\\${today.shortName})");
+  print("Is weekday: \\${today.isWeekday}");
+  print("Next day: \\${today.nextDay.name}");
+  print("Previous day: \\${today.previousDay.name}");
+  print("Weekdays: \\${DayOfWeek.weekdays.map((d) => d.shortName).join(', ')}");
+  print("Weekends: \\${DayOfWeek.weekends.map((d) => d.shortName).join(', ')}");
   print("");
 
   // Example 7: Order Status Transitions
@@ -388,9 +400,12 @@ void main() {
       AppState.error => "Show error message",
       AppState.offline => "Show offline banner",
     };
-    print("${state.name}: $action");
+    print("\\${state.name}: $action");
   }
 }
+
+// Simple Gender Enum
+enum Gender { male, female }
 
 /*
   KEY FEATURES OF DART ENUMS:
